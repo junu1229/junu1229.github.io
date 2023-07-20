@@ -7,10 +7,17 @@ header, main, footer {
 header {
     background-color: gray;
     width: 100%;
-    height: 1000px;
+    height: 1200px;
     overflow: hidden;
     text-align: center;
 
+}
+#backgroundTop {
+    position: absolute;
+    opacity: 30%;
+    width: 100%;
+    height: 9rem;
+    background: linear-gradient(black, gray);
 }
 nav {
     display: flex;
@@ -20,10 +27,10 @@ nav {
     margin: 0 auto;
     font-size: 1.3rem;
     padding: 3rem 2rem;
-
 }
 #leftNav {
     display: flex;
+    z-index: 10;
 }
 #leftNav p {
     color: white;
@@ -42,27 +49,32 @@ nav {
 }
 #rightNav a {
     position: relative;
-    z-index: 1;
     color: white;
     margin-left: 2rem;
 }
 header section {
-    
     position: relative;
     display: flex;
     max-width: 1500px;
     margin: 0 auto;
 } 
 #hello {
-    position: relative;
+    left: 9%;
+    position: absolute;
     color: white;
-    top: 21rem;
-    right: -10%;
-    font-size: 1.3rem;
-    line-height: 2rem;
+    top: 18rem;
+    font-size: 1.6rem;
+    line-height: 5rem;
     display: block;
     white-space: nowrap;
-    
+    font-weight: bold;
+    z-index: 1;
+}
+#hello__p1 {
+    margin-left: -25%;
+}
+#hello__p2 {
+    margin-left: 25%;
 }
 #mainimage {
     position: relative;
@@ -70,5 +82,67 @@ header section {
     max-width: 800px;
     margin: 0 auto;
     min-width: 650px;
-    top: -7rem;
+    top: -2rem;
+}
+#roll {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 17rem;
+    color: white;
+    font-weight: bold;
+    overflow: hidden;
+    margin-top: 40rem;
+    word-spacing: 2.5rem;
+    right: -24rem;
+    z-index: 1;
+}
+#introducemin {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1500px;
+    margin: 2rem auto;
+}
+#introducemin__h2 {
+    margin-left: -20rem;
+    font-size: 4rem;
+    line-height: 6rem;
+}
+/* @media screen and (max-width: 770px) {
+    #introducemin__h2 {
+        margin-right: 25rem;
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+} */
+
+
+#aBall {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50%;
+    margin-top: 7rem;
+}
+#introducemin div a {
+    color: white;
+}
+#main__portfolio {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+.main__portfolio__div {
+    width: 100%;
+    background-color: beige;
+    height: 15rem;
+    /* border: ;     */
 }
