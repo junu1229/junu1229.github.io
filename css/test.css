@@ -108,28 +108,34 @@ nav {
 #leftNav__p {
     display: flex;
     max-width: 7.5rem;
+    overflow: hidden;
     text-overflow: clip;
     white-space: nowrap;
 }
-#leftNav:hover #leftNav__p {
+#leftNav:hover #leftNav__p p {
     transform: translateX(-4.9rem);
     transition: 1500ms;
+    font-size: 1.25rem;
+}
+#leftNav:not(:hover) #leftNav__p p {
+    animation: leftNav 1500ms;
+}
+
+@keyframes leftNav {
+    0% {
+        transform: translateX(-4.9rem);
+        font-size: 1.25rem;
+    }
+    100% {
+        transform: translateX(0);
+        font-size: 1.3rem;
+    }
 }
 #leftNav__p p {
     padding-left: 0.25rem;
 }
-#leftNav:hover #leftNav__p__codeby {
-    visibility: hidden;
-}
 #leftNav__p__name {
     display: flex;
-}
-.leftNav__p__name__hidden {
-    visibility: hidden;
-}
-#leftNav:hover .leftNav__p__name__hidden {
-    visibility: visible;
-    transition: 1000ms;
 }
 #rightNav {
     padding: 1rem;
