@@ -1,54 +1,84 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junu's portfolio</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/test.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <title>junu's portfolio</title>
 </head>
 <body>
     <header>
+        <div id="backgroundTop"></div>
         <nav>
-            <a class="leftNav" href="index.html">
-                <p>©</p>
-                <div class="leftNav__p">
-                    <p class="leftNav__p__codeby">Code by</p>
-                    <div class="leftNav__p__name">
-                        <p>Kim</p>
-                        <p class="leftNav__p__name__hidden">Jun Woo</p>
+            <a  href="index.html" id="leftNav" class="container">
+                <div class="mouseButton" id="mouseButton0">
+                    <p id="cMark">©</p>
+                    <div id="leftNav__p">
+                        <p id="leftNav__p__codeby">Code by</p>
+                        <div id="leftNav__p__name">
+                            <p>Kim</p>
+                            <p>Jun Woo</p>
+                        </div>
                     </div>
                 </div>
             </a>
-            <div class="rightNav">
-                <a href="#">About</a>
-                <a href="#">portfolio</a>
-                <a href="https://github.com/junu1229">Github</a>
+            <div id="rightNav">
+                <a href="#" class="container" id="container1">
+                    <div class="mouseButton" id="mouseButton1">
+                        <p>About</p>
+                    </div>
+                </a>
+                <a href="#" class="container" id="container2">
+                    <div class="mouseButton" id="mouseButton2">
+                        <p>Portfolio</p>
+                    </div>
+                </a>
+                <a href="https://github.com/junu1229" class="container" id="container3">
+                    <div class="mouseButton" id="mouseButton3">
+                        Github
+                    </div>
+                </a>
             </div>
         </nav>
+        <section>
+            <!-- <p>집 주소가 들어갈 자리</p> -->
+            <!-- <div id="hello">
+                <h2 id="hello__p1">신입개발자</h2>
+                <h2 id="hello__p2">김준우입니다.</h2>
+            </div> -->
+            <h1 class="roll" id="roll1">Java Javascript MySQL Oracle Java Javascript MySQL Oracle</h1>
+            <!-- <h1 class="roll" id="roll2">Java Javascript MySQL Oracle</h1> -->
+            <img id="mainimage" src="resource/shubak.png" alt="본인사진임">
+        </section>
     </header>
     <main>
-        <section id="section1">
-            <img class="mainimage" src="/resource/shubak.png" alt="본인사진임">
-            <div id="mainbackground1"></div>
-            <div id="location"></div>
-            <div id="hi">
-                <p>안녕하십니까 😎</p>
-                <p>신입 개발자 김준우입니다.</p>
+        <section id="introducemin">
+            <div id="introducemin__h2">
+                <h2>성장하는 개발자 김준우입니다</h2>
+                <h2>묵묵히 앞으로 한걸음씩</h2>
+                <h2>나아가고 있습니다</h2>
+            </div>
+            <div id="ballContainer">
+                <a href="#" id="aBall"><!-- <a href="#">About Me</a> -->About Me</a>
             </div>
         </section>
-        <section id="section2">
-            <p>asdasd</p>
+        <section id="main__portfolio">
+            <p>portfolio</p>
+            <div class="main__portfolio__div">
+                <a href="" >
+                    <h3 class="portfolio-title">온 한의원</h3>
+                </a>
+            </div>
+            <div class="main__portfolio__div">
+                <a href="">
+                    <h3 class="portfolio-title">Free pet's</h3>
+                </a>
+            </div>
         </section>
-        <!-- 화살표 모양 들어감 -->
-        <!-- <h2>Dev</h2> -->
-
     </main>
-    <footer>
-
-    </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

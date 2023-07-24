@@ -86,21 +86,34 @@ nav {
     display: flex;
     justify-content: space-between;
     max-width: 1500px;
-    padding-top: 3rem;
+    padding-top: 2rem;
     margin: 0 auto;
     font-size: 1.3rem;
     padding: 3rem 2rem;
 }
-#leftNav {
+.mouseButton {
     display: flex;
-    z-index: 10;
-    padding-left: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    position: absolute;
+	/* border-radius: 50%; */
+	left: 50%;
+	top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
 }
 #leftNav:hover #cMark {
-    transform: rotateZ(360deg);
-    transition: 1500ms;
+    transform: rotateZ(-360deg);
+    transition: 1200ms;
+}
+#leftNav:not(:hover) #cMark {
+    animation: leftcMark 1200ms;
+}
+@keyframes leftcMark {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
 #leftNav p {
     color: white;
@@ -114,11 +127,11 @@ nav {
 }
 #leftNav:hover #leftNav__p p {
     transform: translateX(-4.9rem);
-    transition: 1500ms;
+    transition: 1200ms;
     font-size: 1.25rem;
 }
 #leftNav:not(:hover) #leftNav__p p {
-    animation: leftNav 1500ms;
+    animation: leftNav 1200ms;
 }
 
 @keyframes leftNav {
@@ -126,7 +139,7 @@ nav {
         transform: translateX(-4.9rem);
         font-size: 1.25rem;
     }
-    100% {
+    to {
         transform: translateX(0);
         font-size: 1.3rem;
     }
@@ -137,13 +150,23 @@ nav {
 #leftNav__p__name {
     display: flex;
 }
+.container {
+    display: flex;
+	flex-direction: row;
+	justify-content: center;
+    position: relative;
+	align-items: center;
+    z-index: 10;
+    height: 3rem;
+	width: 10rem;
+    max-width: 100%;
+}
 #rightNav {
-    padding: 1rem;
+    display: flex;
 }
 #rightNav a {
     position: relative;
     color: white;
-    margin-left: 2rem;
 }
 header section {
     position: relative;
@@ -207,14 +230,12 @@ header section {
     width: 100%;
     height: 600px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 1500px;
     margin: 2rem auto;
 }
 #introducemin__h2 {
-    margin-left: -20rem;
     font-size: 4rem;
     line-height: 6rem;
 }
@@ -225,21 +246,36 @@ header section {
         line-height: 2rem;
     }
 } */
-
+#ballContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    z-index: 10;
+    height: 20rem;
+    width: 20rem;
+    max-width: 100%;
+}
+#ballContainer a {
+    font-size: 1.3rem;
+}
 
 #aBall {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-color: black;
-    border-radius: 50%;
     display: flex;
-    text-align: center;
+    position: absolute;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
     justify-content: center;
     align-items: center;
-    margin-left: 50%;
-    margin-top: 7rem;
+    background-color: black;
+	left: 50%;
+	top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
 }
+
 #introducemin div a {
     color: white;
 }

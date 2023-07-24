@@ -5,30 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>junu's portfolio</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="js/script.js">
 </head>
 <body>
     <header>
         <div id="backgroundTop"></div>
         <nav>
-            <a href="index.html" id="leftNav">
-                <p id="cMark">©</p>
-                <div id="leftNav__p">
-                    <p id="leftNav__p__codeby">Code by</p>
-                    <div id="leftNav__p__name">
-                        <p>Kim</p>
-                        <p>Jun Woo</p>
+            <a  href="index.html" id="leftNav" class="container">
+                <div class="mouseButton" id="mouseButton0">
+                    <p id="cMark">©</p>
+                    <div id="leftNav__p">
+                        <p id="leftNav__p__codeby">Code by</p>
+                        <div id="leftNav__p__name">
+                            <p>Kim</p>
+                            <p>Jun Woo</p>
+                        </div>
                     </div>
                 </div>
             </a>
             <div id="rightNav">
-                <a href="#" >About</a>
-                <a href="#">portfolio</a>
-                <a href="https://github.com/junu1229">Github</a>
+                <a href="#" class="container" id="container1">
+                    <div class="mouseButton" id="mouseButton1">
+                        <p>About</p>
+                    </div>
+                </a>
+                <a href="#" class="container" id="container2">
+                    <div class="mouseButton" id="mouseButton2">
+                        <p>Portfolio</p>
+                    </div>
+                </a>
+                <a href="https://github.com/junu1229" class="container" id="container3">
+                    <div class="mouseButton" id="mouseButton3">
+                        Github
+                    </div>
+                </a>
             </div>
         </nav>
         <section>
@@ -49,8 +61,8 @@
                 <h2>묵묵히 앞으로 한걸음씩</h2>
                 <h2>나아가고 있습니다</h2>
             </div>
-            <div id="aBall">
-                <a href="#">About Me</a>
+            <div id="ballContainer">
+                <a href="#" id="aBall"><!-- <a href="#">About Me</a> -->About Me</a>
             </div>
         </section>
         <section id="main__portfolio">
@@ -67,5 +79,6 @@
             </div>
         </section>
     </main>
+    <script src="js/script.js"></script>
 </body>
 </html>
