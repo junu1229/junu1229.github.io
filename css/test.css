@@ -282,17 +282,20 @@ header section {
 #main__portfolio {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .main__portfolio__div {
     width: 100%;
-    height: 15rem;
+    height: 14rem;
     border-top: 1px solid black;
-    border-bottom: 1px solid black;
     display: flex;
     align-items: center;
     font-size: 7rem;
     max-width: 1200px;
-
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .main__portfolio__div a {
     display: flex;
@@ -305,4 +308,9 @@ header section {
 }
 .main__portfolio__div a:hover .portfolio-title {
     opacity: 50%;
+}
+footer {
+    background-color: rgb(28, 29, 32);
+    width: 100%;
+    height: 1000px;
 }
