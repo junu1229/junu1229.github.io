@@ -60,6 +60,19 @@
 	font-display: swap;
 	src: local('Pretendard Thin'), url('../woff2/Pretendard-Thin.woff2') format('woff2'), url('../woff/Pretendard-Thin.woff') format('woff');
 }
+@keyframes colorchange {
+    to{
+        background-color: #4B89DC;
+        color: black;
+    }
+}
+/* @keyframes colorchange {
+    to{
+        background-color: #4B89DC;
+        color: black;
+    }
+} */
+
 
 a {
     text-decoration: none;
@@ -207,7 +220,7 @@ header section {
     color: white;
     font-weight: bold;
     overflow: hidden;
-    top: 40%;
+    top: 35%;
     word-spacing: 2.5rem;
     z-index: 1;
     animation: rollAni 30000ms linear infinite;
@@ -220,10 +233,10 @@ header section {
 }
 @keyframes rollAni {
     0%{
-        transform: translate(0,0);
+        transform: translateX(0);
     }
     100%{
-        transform: translate(-50.623%,0);
+        transform: translateX(-50.623%);
     }
 }
 #introducemin {
@@ -239,13 +252,17 @@ header section {
     font-size: 4rem;
     line-height: 6rem;
 }
-/* @media screen and (max-width: 770px) {
-    #introducemin__h2 {
-        margin-right: 25rem;
-        font-size: 2rem;
-        line-height: 2rem;
-    }
-} */
+#introducemin__h2__1 {
+    transition: 2s;
+}
+#introducemin__h2__2 {
+    transition: 2s;
+}
+#introducemin__h2__3 {
+    transition: 2s;
+}
+
+
 #ballContainer {
     display: flex;
     flex-direction: row;
@@ -275,7 +292,6 @@ header section {
     transform: translate(-50%, -50%);
     cursor: pointer;
 }
-
 #introducemin div a {
     color: white;
 }
@@ -309,8 +325,24 @@ header section {
 .main__portfolio__div a:hover .portfolio-title {
     opacity: 50%;
 }
+#portfolioBall {
+    display: flex;
+    width: 16rem;
+    height: 4rem;
+    border-top-left-radius: 12.5% 50%;
+    border-top-right-radius: 12.5% 50%;
+    border-bottom-left-radius: 12.5% 50%;
+    border-bottom-right-radius: 12.5% 50%;
+    border: 1px solid black;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 1.4rem;
+}
 footer {
+    margin-top: 4rem;
     background-color: rgb(28, 29, 32);
     width: 100%;
-    height: 1000px;
+    height: 900px;
 }
