@@ -73,7 +73,6 @@
     }
 } */
 
-
 a {
     text-decoration: none;
 }
@@ -108,26 +107,8 @@ nav {
     display: flex;
     position: absolute;
 	/* border-radius: 50%; */
-	left: 50%;
-	top: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
 }
-#leftNav:hover #cMark {
-    transform: rotateZ(-360deg);
-    transition: 1200ms;
-}
-#leftNav:not(:hover) #cMark {
-    animation: leftcMark 1200ms;
-}
-@keyframes leftcMark {
-    0% {
-        transform: rotateZ(0deg);
-    }
-    100% {
-        transform: rotateZ(360deg);
-    }
-}
+
 #leftNav p {
     color: white;
 }
@@ -137,25 +118,6 @@ nav {
     overflow: hidden;
     text-overflow: clip;
     white-space: nowrap;
-}
-#leftNav:hover #leftNav__p p {
-    transform: translateX(-4.9rem);
-    transition: 1200ms;
-    font-size: 1.25rem;
-}
-#leftNav:not(:hover) #leftNav__p p {
-    animation: leftNav 1200ms;
-}
-
-@keyframes leftNav {
-    0% {
-        transform: translateX(-4.9rem);
-        font-size: 1.25rem;
-    }
-    to {
-        transform: translateX(0);
-        font-size: 1.3rem;
-    }
 }
 #leftNav__p p {
     padding-left: 0.25rem;
@@ -223,22 +185,9 @@ header section {
     top: 35%;
     word-spacing: 2.5rem;
     z-index: 1;
-    animation: rollAni 30000ms linear infinite;
+    right: -420%;
 }
-/* #roll1{
-    right: -480%;
-} */
-#roll2 {
-    right: -233%;
-}
-@keyframes rollAni {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(-50.623%);
-    }
-}
+
 #introducemin {
     width: 100%;
     height: 600px;
@@ -345,4 +294,62 @@ footer {
     background-color: rgb(28, 29, 32);
     width: 100%;
     height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#footer1 {
+    padding-top: 20rem;
+    width: 1200px;
+    margin: 0 auto;
+}
+#footer1 p {
+    color: white;
+    font-size: 3rem;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+#footer1 hr {
+    margin-top: 3rem;
+}
+#footer1 div {
+    display: flex;
+    margin-top: 4rem;
+    justify-content: center;
+}
+#footer1 a {
+    display: flex;
+    width: 16rem;
+    height: 4rem;
+    border: 1px solid;
+    border-top-left-radius: 12.5% 50%;
+    border-top-right-radius: 12.5% 50%;
+    border-bottom-right-radius: 12.5% 50%;
+    border-bottom-left-radius: 12.5% 50%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    font-size: 1.2rem;
+}
+#footer2 {
+    padding: 1rem;
+    width: 1500px;
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+#footer2 p {
+    text-align: left;
+}
+.footer2__p1 {
+    color: gray;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+#footer2 div a {
+    color: white;
 }
