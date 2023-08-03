@@ -198,7 +198,6 @@ async function left (k) { // We need to wrap the loop into an async function for
         await timer(10); // then the created Promise can be awaited
     }
 }
-
 const rollbarMatrix = window.getComputedStyle(rollbar).transform;
 window.addEventListener('wheel', function(e){
     let rollvark = getComputedStyle(rollbar);
@@ -217,3 +216,6 @@ window.addEventListener('DOMContentLoaded', function(e){
     let k = rollvaluek.substr(0,rollvaluek.length-1);
     right(parseFloat(k));
 })
+window.onload = function() {
+    alert(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
+};
