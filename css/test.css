@@ -63,7 +63,6 @@
 :root {
     --rollx: 0%;
 }
-    
 a {
     text-decoration: none;
 }
@@ -76,7 +75,27 @@ header {
     height: 1100px;
     overflow: hidden;
     text-align: center;
-
+}
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+#loading {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color: black;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 5rem;
+    cursor: progress;
+}
+#loading p {
+    visibility: hidden;
+    position: absolute;
 }
 #backgroundTop {
     position: absolute;

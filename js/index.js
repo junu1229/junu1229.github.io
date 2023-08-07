@@ -1,3 +1,6 @@
+const body = document.querySelector('body');
+const loadingDiv = document.querySelector('#loading');
+const loadingDivPs = document.querySelectorAll('#loading p');
 const leftNav = document.querySelector('#leftNav');
 const mouseButton = document.querySelector('#mouseButton0');
 const cMark = document.querySelector('#cMark');
@@ -198,7 +201,6 @@ async function left (k) { // We need to wrap the loop into an async function for
         await timer(10); // then the created Promise can be awaited
     }
 }
-
 const rollbarMatrix = window.getComputedStyle(rollbar).transform;
 window.addEventListener('wheel', function(e){
     let rollvark = getComputedStyle(rollbar);
@@ -212,8 +214,32 @@ window.addEventListener('wheel', function(e){
     }
 })
 window.addEventListener('DOMContentLoaded', function(e){
+    loading();
     let rollvark = getComputedStyle(rollbar);
     let rollvaluek = rollvark.getPropertyValue('--rollx');
     let k = rollvaluek.substr(0,rollvaluek.length-1);
     right(parseFloat(k));
 })
+async function loading() {
+    body.classList.add("stop-scrolling");
+    for(var i = 1; i<2; i++) {
+        await timer((400));
+    }
+    for(var i = 1; i<13; i++) {
+        console.log(loadingDivPs[i-1]);
+        loadingDivPs[i-1].style.visibility = 'visible';
+        await timer(400/(1+(i*0.25)));
+        loadingDivPs[i-1].style.visibility = 'hidden';
+    }
+    for(var i = 1; i<2; i++) {
+        loadingDivPs[13].style.visibility = 'visible';
+        await timer((500));
+        loadingDivPs[13].style.visibility = 'hidden';
+        console.log(loadingDivPs[13]);
+    }
+    loadingDiv.style.transform = "translateY(-100%)";
+    loadingDiv.style.borderBottomRightRadius = "37.5% 50%";
+    loadingDiv.style.borderBottomLeftRadius = "37.5% 50%";
+    loadingDiv.style.transition = "1.0s"
+    body.classList.remove("stop-scrolling");
+}
