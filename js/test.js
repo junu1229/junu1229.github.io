@@ -27,6 +27,7 @@ const phone = document.querySelector('#phone');
 const email = document.querySelector('#email');
 const contactme = document.querySelector('#contactme');
 const instagram = document.querySelector('#instagram');
+
 leftNav.addEventListener("mouseover", function () {
     cMark.style.transform = "rotateZ(360deg)";
     cMark.style.transition = "all 1.2s";
@@ -135,7 +136,7 @@ window.addEventListener('scroll', function(){
     let width = ((this.window.scrollY/(this.document.body.offsetHeight-this.window.innerHeight))*100);
     let ballContainerwidth = -((this.window.scrollY/(this.document.body.offsetHeight-this.window.innerHeight))*100)+40;
     ballContainer.style.top = ballContainerwidth + "%";
-    console.log(width);
+    // console.log(width);
     if(width>=19.3){
         introducemin__h2__1.style.opacity = "100%";
     } else {
@@ -160,7 +161,7 @@ window.addEventListener('scroll', function(){
     }
 });
 let rollstatus = 'rightway';
-const timer = ms => new Promise(res => setTimeout(res, ms))
+const timer = ms => new Promise(res => setTimeout(res, ms));
 async function right (k) { // We need to wrap the loop into an async function for this to work
     rollstatus = 'rightway';
     for (var j = 0; j < 99999999; j++) {
