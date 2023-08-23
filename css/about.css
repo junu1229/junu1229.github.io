@@ -161,9 +161,11 @@ header h2 {
 main {
     margin-top: 15rem;
     height: 100rem;
+    margin: 0 auto;
+    padding: 0 6rem;
 }
 #introduce {
-    margin: 0 auto;
+    margin: 20rem auto;
     padding: 0 6rem;
     display: flex;
     justify-content: center;
@@ -182,4 +184,8 @@ main {
     font-size: 1.4rem;
     padding: 0 5rem;
     padding-top: 10rem;
+}
+#skills {
+    margin-top: 10rem;
+
 }
