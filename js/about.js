@@ -7,6 +7,10 @@ const cMark = document.querySelector('#cMark');
 const leftNav__p = document.querySelector('#leftNav__p p');
 const leftNav__p__name1 = document.querySelector('#leftNav__p__name1');
 const leftNav__p__name2 = document.querySelector('#leftNav__p__name2');
+const phone = document.querySelector('#phone');
+const email = document.querySelector('#email');
+const contactme = document.querySelector('#contactme');
+const instagram = document.querySelector('#instagram');
 const timer = ms => new Promise(res => setTimeout(res, ms));
 leftNav.addEventListener("mouseover", function () {
     cMark.style.transform = "rotateZ(360deg)";
@@ -74,3 +78,46 @@ async function loading() {
     loadingDiv.style.transition = "1.0s"
     body.classList.remove("stop-scrolling");
 }
+phone.addEventListener("mouseover", function () {
+    phone.style.backgroundColor = "white";
+    phone.style.color = "black";
+    phone.style.transition = "all 0.7s";
+});
+phone.addEventListener("mouseout", function () {
+    phone.style.backgroundColor = "rgb(28, 29, 32)";
+    phone.style.color = "white";
+    phone.style.transition = "all 0.7s";
+});
+email.addEventListener("mouseover", function () {
+    email.style.backgroundColor = "white";
+    email.style.color = "black";
+    email.style.transition = "all 0.7s";
+});
+email.addEventListener("mouseout", function () {
+    email.style.backgroundColor = "rgb(28, 29, 32)";
+    email.style.color = "white";
+    email.style.transition = "all 0.7s";
+});
+window.addEventListener('scroll', function(){
+    // console.log(window.pageXOffset); //deprecated
+    // console.log(this.window.scrollY);
+    // console.log(this.document.body.offsetHeight)
+    // console.log(this.window.innerHeight);
+    let width = ((this.window.scrollY/(this.document.body.offsetHeight-this.window.innerHeight))*100);
+    console.log(width);
+    if(width>=78.8) {
+        contactme.style.opacity = "100%";
+        contactme.style.transition = "0.7s";
+    } else {
+        contactme.style.opacity = "0%";
+        contactme.style.transition = "0.7s";
+    }
+});
+instagram.addEventListener("mouseover", function () {
+    instagram.style.transform = "translateY(-0.5rem)";
+    instagram.style.transition = "0.7s";
+});
+instagram.addEventListener("mouseout", function () {
+    instagram.style.transform = "translateY(0)";
+    instagram.style.transition = "0.7s";
+});
