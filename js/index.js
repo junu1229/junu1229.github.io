@@ -213,7 +213,13 @@ window.addEventListener('wheel', function(e){
         left(parseFloat(k));
     }
 })
+window.onload = function() {
+    setTimeout (function() {
+        scrollTo(0,0);
+    }, 100);
+}
 window.addEventListener('DOMContentLoaded', function(e){
+
     loading();
     let rollvark = getComputedStyle(rollbar);
     let rollvaluek = rollvark.getPropertyValue('--rollx');

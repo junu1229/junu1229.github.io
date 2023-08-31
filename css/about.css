@@ -89,6 +89,7 @@ header {
     color: white;
     font-size: 5rem;
     cursor: progress;
+    transform: translateY(-100%);
 }
 #loading p {
     visibility: hidden;

@@ -1,12 +1,13 @@
 const body = document.querySelector('body');
 const loadingDiv = document.querySelector('#loading');
-const loadingDivPs = document.querySelectorAll('#loading p');
+const loadingDivPs = document.querySelector('#loading p');
 const leftNav = document.querySelector('#leftNav');
 const mouseButton = document.querySelector('#mouseButton0');
 const cMark = document.querySelector('#cMark');
 const leftNav__p = document.querySelector('#leftNav__p p');
 const leftNav__p__name1 = document.querySelector('#leftNav__p__name1');
 const leftNav__p__name2 = document.querySelector('#leftNav__p__name2');
+const introducep = document.querySelector('#introduce p')
 const phone = document.querySelector('#phone');
 const email = document.querySelector('#email');
 const contactme = document.querySelector('#contactme');
@@ -66,12 +67,14 @@ window.addEventListener('DOMContentLoaded', function(e){
     loading();
 })
 async function loading() {
+    loadingDiv.style.transform = "translateY(0%)";
+    setTimeout (function() {
+        scrollTo(0,0);
+    }, 100);
     body.classList.add("stop-scrolling");
-    for(var i = 1; i<2; i++) {
-        loadingDivPs[i-1].style.visibility = 'visible';
-        await timer((700));
-        loadingDivPs[i-1].style.visibility = 'hidden';
-    }
+    loadingDivPs.style.visibility = 'visible';
+    await timer((2000));
+    loadingDivPs.style.visibility = 'hidden';
     loadingDiv.style.transform = "translateY(-100%)";
     loadingDiv.style.borderBottomRightRadius = "37.5% 50%";
     loadingDiv.style.borderBottomLeftRadius = "37.5% 50%";
@@ -105,6 +108,9 @@ window.addEventListener('scroll', function(){
     // console.log(this.window.innerHeight);
     let width = ((this.window.scrollY/(this.document.body.offsetHeight-this.window.innerHeight))*100);
     console.log(width);
+
+    if(width>=24.5) {
+    }
     if(width>=78.8) {
         contactme.style.opacity = "100%";
         contactme.style.transition = "0.7s";
