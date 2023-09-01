@@ -84,7 +84,7 @@ header {
     width: 100%;
     position: absolute;
     height: 100%;
-    background-color: black;
+    background-color: #424242;
     z-index: 999999;
     display: flex;
     align-items: center;
@@ -92,6 +92,7 @@ header {
     color: white;
     font-size: 5rem;
     cursor: progress;
+    transform: translateX(-100%);
 }
 #loading p {
     visibility: hidden;

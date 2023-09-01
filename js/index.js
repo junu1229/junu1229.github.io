@@ -160,7 +160,7 @@ window.addEventListener('scroll', function(){
     }
 });
 let rollstatus = 'rightway';
-const timer = ms => new Promise(res => setTimeout(res, ms))
+const timer = ms => new Promise(res => setTimeout(res, ms));
 async function right (k) { // We need to wrap the loop into an async function for this to work
     rollstatus = 'rightway';
     for (var j = 0; j < 99999999; j++) {
@@ -227,6 +227,7 @@ window.addEventListener('DOMContentLoaded', function(e){
     right(parseFloat(k));
 })
 async function loading() {
+    loadingDiv.style.transform = "translateY(0%)";
     body.classList.add("stop-scrolling");
     for(var i = 1; i<2; i++) {
         await timer((400));
@@ -246,6 +247,6 @@ async function loading() {
     loadingDiv.style.transform = "translateY(-100%)";
     loadingDiv.style.borderBottomRightRadius = "37.5% 50%";
     loadingDiv.style.borderBottomLeftRadius = "37.5% 50%";
-    loadingDiv.style.transition = "1.0s"
+    loadingDiv.style.transition = "1.0s";
     body.classList.remove("stop-scrolling");
 }

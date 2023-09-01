@@ -7,12 +7,13 @@ const cMark = document.querySelector('#cMark');
 const leftNav__p = document.querySelector('#leftNav__p p');
 const leftNav__p__name1 = document.querySelector('#leftNav__p__name1');
 const leftNav__p__name2 = document.querySelector('#leftNav__p__name2');
-const introducep = document.querySelector('#introduce p')
+const introducep = document.querySelector('#introduce p');
+const dots = document.querySelectorAll('.dot');
 const phone = document.querySelector('#phone');
 const email = document.querySelector('#email');
 const contactme = document.querySelector('#contactme');
 const instagram = document.querySelector('#instagram');
-const timer = ms => new Promise(res => setTimeout(res, ms));
+const all = document.querySelector('#all');
 leftNav.addEventListener("mouseover", function () {
     cMark.style.transform = "rotateZ(360deg)";
     cMark.style.transition = "all 1.2s";
@@ -63,23 +64,28 @@ container3.addEventListener("mouseout", function () {
     mouseButton3.style.transform = "translateY(0)";
     mouseButton3.style.transition = "0.7s";
 });
-window.addEventListener('DOMContentLoaded', function(e){
-    loading();
-})
-async function loading() {
-    loadingDiv.style.transform = "translateY(0%)";
+window.onload = function() {
+    all.style.display = 'none';
     setTimeout (function() {
+        loadingDiv.style.transform = "translateY(0%)";
         scrollTo(0,0);
+        body.classList.add("stop-scrolling");
     }, 100);
-    body.classList.add("stop-scrolling");
+    loading();
+}
+const timer = ms => new Promise(res => setTimeout(res, ms));
+async function loading() {
+    introducep.style.transform = `0rem`;
     loadingDivPs.style.visibility = 'visible';
-    await timer((2000));
+    await timer((1800));
     loadingDivPs.style.visibility = 'hidden';
+    all.style.display = 'block';
     loadingDiv.style.transform = "translateY(-100%)";
     loadingDiv.style.borderBottomRightRadius = "37.5% 50%";
     loadingDiv.style.borderBottomLeftRadius = "37.5% 50%";
-    loadingDiv.style.transition = "1.0s"
+    loadingDiv.style.transition = "1.0s";
     body.classList.remove("stop-scrolling");
+    dotdot();
 }
 phone.addEventListener("mouseover", function () {
     phone.style.backgroundColor = "white";
@@ -108,10 +114,11 @@ window.addEventListener('scroll', function(){
     // console.log(this.window.innerHeight);
     let width = ((this.window.scrollY/(this.document.body.offsetHeight-this.window.innerHeight))*100);
     console.log(width);
-
-    if(width>=24.5) {
+    if(width>=20.5) {
+        introduceph = (width-20.5)*0.5;
+        introducep.style.transform = `translateY(${introduceph}rem)`;
     }
-    if(width>=78.8) {
+    if(width>=82) {
         contactme.style.opacity = "100%";
         contactme.style.transition = "0.7s";
     } else {
@@ -127,3 +134,18 @@ instagram.addEventListener("mouseout", function () {
     instagram.style.transform = "translateY(0)";
     instagram.style.transition = "0.7s";
 });
+async function dotdot() {
+    
+    for(let i = 0; i!=-1; i++) {
+        for(let j = 0; j<3; j++) {
+
+            await timer((800));
+            dots[j].style.visibility = 'visible';
+        }
+        await timer((800)); 
+        dots[0].style.visibility = 'hidden';
+        dots[1].style.visibility = 'hidden';
+        dots[2].style.visibility = 'hidden';
+    }
+    
+}

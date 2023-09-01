@@ -60,7 +60,6 @@
 	font-display: swap;
 	src: local('Pretendard Thin'), url('../woff2/Pretendard-Thin.woff2') format('woff2'), url('../woff/Pretendard-Thin.woff') format('woff');
 }
-
 a {
     text-decoration: none;
 }
@@ -89,7 +88,6 @@ header {
     color: white;
     font-size: 5rem;
     cursor: progress;
-    transform: translateY(-100%);
 }
 #loading p {
     visibility: hidden;
@@ -180,10 +178,12 @@ main {
     width: 100%;
     justify-self: center;
     align-content: center;
+    position: relative;
 }
 #introduce p {
     font-size: 1.4rem;
     padding: 0 5rem;
+    transform: translateX(0);
 }
 #skills {
     margin-top: 10rem;
@@ -253,4 +253,7 @@ footer {
 }
 #footer2 div a {
     color: white;
+}
+.dot {
+    visibility: hidden;
 }
