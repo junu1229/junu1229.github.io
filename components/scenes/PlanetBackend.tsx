@@ -26,7 +26,8 @@ export function PlanetBackend() {
       if (mode !== 'full' || !ref.current) return
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: ref.current, start: 'top top', end: '+=300vh',
+          // ScrollTrigger는 end 문자열의 'vh' 단위를 픽셀로 오인식하므로 함수 기반으로 변환한다.
+          trigger: ref.current, start: 'top top', end: () => '+=' + 3 * window.innerHeight,
           scrub: true, pin: true, anticipatePin: 1,
         },
       })

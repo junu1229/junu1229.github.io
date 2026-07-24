@@ -24,6 +24,15 @@ test.describe('데스크톱 모션', () => {
   test('pin-spacer가 생성된다', async ({ page }) => {
     await page.goto('/')
     await expect(page.locator('.pin-spacer').first()).toBeAttached()
+
+    // vh 기반 end 문자열이 실제 뷰포트 배수만큼 핀 구간을 늘리는지 검증한다.
+    // (GSAP ScrollTrigger는 end 문자열의 'vh' 단위를 이해하지 못하고 px로 오인식한다)
+    const spacerHeight = await page
+      .locator('.pin-spacer')
+      .first()
+      .evaluate((el) => el.getBoundingClientRect().height)
+    const viewportHeight = page.viewportSize()!.height
+    expect(spacerHeight).toBeGreaterThanOrEqual(viewportHeight * 2.5)
   })
 })
 
