@@ -4,6 +4,10 @@ node_modules/
 out/
 *.tsbuildinfo
 
+# test artifacts
+test-results/
+playwright-report/
+
 # tooling
 .superpowers/
 

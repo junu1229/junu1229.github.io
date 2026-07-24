@@ -33,3 +33,26 @@ a { color: inherit; }
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
+
+.starfield-fixed { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.starfield { width: 100%; height: 100%; }
+main { position: relative; z-index: 1; }
+.scene { position: relative; min-height: 100svh; overflow: hidden; }
+.scene-inner {
+  position: relative; max-width: 72rem; margin: 0 auto;
+  padding: 4rem 1.5rem; min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.lang-toggle {
+  position: fixed; top: 1rem; right: 1rem; z-index: 50;
+  background: var(--panel-navy); color: var(--cream);
+  border: 1px solid var(--purple); border-radius: 999px;
+  padding: 0.4rem 1rem; font-family: var(--font-mono), monospace;
+  font-size: 0.8rem; cursor: pointer;
+}
+.skip-link {
+  position: absolute; top: -100%; left: 1rem; z-index: 60;
+  background: var(--cream); color: var(--on-accent);
+  padding: 0.5rem 1rem; border-radius: 0 0 8px 8px;
+}
+.skip-link:focus-visible { top: 0; }
