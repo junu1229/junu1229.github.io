@@ -101,3 +101,40 @@ test.describe('reduced motion', () => {
     await expect(page.locator('[data-scene="6"]')).toBeAttached()
   })
 })
+
+test('가로 오버플로가 없다', async ({ page }) => {
+  await page.goto('/')
+  const overflow = await page.evaluate(
+    () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  )
+  expect(overflow).toBeLessThanOrEqual(0)
+})
+
+test('콘솔 에러가 없다', async ({ page, isMobile }) => {
+  const errors: string[] = []
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text())
+  })
+  page.on('pageerror', (err) => errors.push(err.message))
+  await page.goto('/')
+  if (!isMobile) {
+    await page.mouse.wheel(0, 5000)
+  } else {
+    await page.evaluate(() => window.scrollBy(0, 5000))
+  }
+  await page.waitForTimeout(500)
+  expect(errors).toEqual([])
+})
+
+test('정보성 콘텐츠가 스크린리더용 DOM으로 존재한다', async ({ page }) => {
+  await page.goto('/')
+  // 다이어그램은 <ol>로 존재
+  await expect(page.locator('ol.sat-flow li')).toHaveCount(4)
+  // 카운터 최종 수치는 sr-only로 존재
+  await expect(page.locator('.sr-only', { hasText: '2,000+ events/sec' })).toBeAttached()
+})
+
+test('별 노드 총량 상한(80)을 지킨다', async ({ page }) => {
+  await page.goto('/')
+  expect(await page.locator('.starfield circle').count()).toBeLessThanOrEqual(80)
+})
