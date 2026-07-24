@@ -1,6 +1,6 @@
 # 포트폴리오 리디자인 — Kurzgesagt 우주 여행 스크롤리텔링
 
-- **날짜**: 2026-07-24 (v2 — Codex 리뷰 20건 반영)
+- **날짜**: 2026-07-24 (v3 — Codex 리뷰 1차 20건 + 2차 4건 반영)
 - **상태**: Codex 확인 패스 후 사용자 승인 대기
 - **저장소**: junu1229.github.io (GitHub Pages 사용자 사이트, 루트 도메인 — basePath 불필요)
 
@@ -154,7 +154,10 @@ Scene 5 토성 관측 → Scene 6 착륙 후 깃발
 ### 성능 상한
 - 반복 SVG는 `<symbol>`/`<use>` 재사용. 별 노드 최대 80개,
   이동 파티클·지갑 glyph는 장면당 최대 40개
-- 스크롤 중 React `setState` 호출 금지, 애니메이션은 `transform`·`opacity`만
+- 스크롤 중 layout을 유발하는 CSS 속성 애니메이션 금지. 기본 허용 속성은
+  `transform`·`opacity`이며, 예외 2가지만 허용: 숫자 카운터의 DOM `textContent`
+  갱신, SVG 경로 드로잉의 `stroke-dasharray`/`stroke-dashoffset`.
+  두 예외 모두 GSAP으로 제어하고 React `setState`는 사용하지 않는다
 - 페이지 전체에서 GSAP ticker는 하나만 사용
 - QA 게이트: Chrome DevTools 6× CPU 스로틀 상태에서 전체 스크롤 시
   연속 500ms를 넘는 프레임 드랍 구간이 없어야 한다 (수동 검증)
@@ -201,7 +204,12 @@ package.json scripts:
 }
 ```
 dependencies: `next`, `react`, `react-dom`, `gsap`, `@gsap/react`, `lenis`,
-`pretendard` — 정확한 버전은 lockfile로 고정.
+`pretendard`
+
+devDependencies (필수): `typescript`, `@types/node`, `@types/react`,
+`@types/react-dom`, `eslint`, `eslint-config-next`, `@playwright/test`, `serve`
+
+정확한 버전은 전부 `package-lock.json`으로 고정.
 
 ### Server/Client 경계
 - `app/layout.tsx`·`app/page.tsx`는 Server Component — metadata·폰트·조립만
@@ -214,16 +222,22 @@ dependencies: `next`, `react`, `react-dom`, `gsap`, `@gsap/react`, `lenis`,
 'use client'
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, useGSAP)
 
-const lenis = new Lenis({ autoRaf: false, syncTouch: false })
-const tick = (time: number) => lenis.raf(time * 1000)
-lenis.on('scroll', ScrollTrigger.update)
-gsap.ticker.add(tick)
-gsap.ticker.lagSmoothing(0)
+useEffect(() => {
+  const lenis = new Lenis({ autoRaf: false, syncTouch: false })
+  const tick = (time: number) => lenis.raf(time * 1000)
 
-// cleanup (unmount 시)
-gsap.ticker.remove(tick)
-lenis.destroy()
+  lenis.on('scroll', ScrollTrigger.update)
+  gsap.ticker.add(tick)
+  gsap.ticker.lagSmoothing(0)
+
+  return () => {
+    gsap.ticker.remove(tick)
+    lenis.destroy()
+  }
+}, [])
 ```
+- 모바일(`pointer: coarse`/767px 이하)과 reduced-motion에서는 §8 우선순위에 따라
+  **이 effect 자체를 실행하지 않는다** (Lenis 미초기화)
 - 각 장면은 `useGSAP({ scope })`로 타임라인 생성 — unmount·dependency 변경 시
   context가 모든 timeline과 ScrollTrigger를 `revert()`한다
 - 로켓 경로는 `MotionPathPlugin` (등록 필수)
@@ -235,11 +249,32 @@ permissions:
   pages: write
   id-token: write
 ```
-빌드 job 순서 (고정):
-```text
-npm ci → npm run typecheck → npm run lint → npm run build
-→ Playwright 브라우저 설치 → out/ 정적 서버 실행 → npm run test:e2e
-→ actions/configure-pages@v5 → actions/upload-pages-artifact@v4 (path: out)
+빌드 job steps (고정):
+```yaml
+steps:
+  - uses: actions/checkout@v4
+  - uses: actions/setup-node@v4
+    with:
+      node-version: 22
+      cache: npm
+  - run: npm ci
+  - run: npm run typecheck
+  - run: npm run lint
+  - run: npm run build
+  - run: npx playwright install --with-deps chromium webkit
+  - run: npm run test:e2e
+  - uses: actions/configure-pages@v5
+  - uses: actions/upload-pages-artifact@v4
+    with:
+      path: out
+```
+`out/` 정적 서버는 Playwright가 직접 관리한다 — `playwright.config.ts` 계약:
+```ts
+webServer: {
+  command: 'npx serve out -l 3000',
+  url: 'http://127.0.0.1:3000',
+  reuseExistingServer: !process.env.CI,
+}
 ```
 deploy job은 build job을 `needs`로 참조, `actions/deploy-pages@v4` +
 `github-pages` environment 지정. 저장소 설정에서 Pages 소스를
@@ -320,7 +355,7 @@ Playwright 스위트 (Chromium + mobile WebKit):
 | 디자인 | Kurzgesagt — 우주 여행 스크롤리텔링(A안) | 비주얼 컴패니언으로 선택 |
 | 캐릭터 | 마스코트 우주비행사(본인), 담백한 카피 | |
 | 3D | Three.js 미사용 | 플랫 2D 미학과 충돌, GSAP+SVG로 충분 |
-| 리뷰 | Codex 리뷰 20건 전건 반영 (v2) | Critical 1·High 5·Medium 11·Low 3 |
+| 리뷰 | Codex 리뷰 1차 20건 + 2차 4건 전건 반영 | 1차: Critical 1·High 5·Medium 11·Low 3 / 2차: Critical 2·High 2 |
 | 패키지 매니저 | npm + package-lock.json | |
 
 ## 부록 A — 콘텐츠 계약 (확정 EN/KO 카피)
