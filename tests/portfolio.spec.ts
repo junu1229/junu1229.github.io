@@ -27,6 +27,20 @@ test.describe('데스크톱 모션', () => {
   })
 })
 
+test('Hero 카피와 EN/KR 토글이 동작한다', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByRole('heading', { name: 'JUNWOO KIM' })).toBeVisible()
+  await expect(page.getByText('A career, in a nutshell')).toBeVisible()
+
+  await page.getByRole('button', { name: 'Switch language' }).click()
+  await expect(page.getByText('한눈에 보는 커리어 여행')).toBeVisible()
+  await expect(page.locator('html')).toHaveAttribute('lang', 'ko')
+
+  await page.reload()
+  await expect(page.getByText('한눈에 보는 커리어 여행')).toBeVisible()
+  await expect(page.locator('html')).toHaveAttribute('lang', 'ko')
+})
+
 test.describe('reduced motion', () => {
   test.use({ contextOptions: { reducedMotion: 'reduce' } })
   test('pin과 Lenis 없이 전체 콘텐츠가 노출된다', async ({ page }) => {
