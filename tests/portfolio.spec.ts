@@ -117,6 +117,8 @@ test('콘솔 에러가 없다', async ({ page, isMobile }) => {
   })
   page.on('pageerror', (err) => errors.push(err.message))
   await page.goto('/')
+  // mobile WebKit은 Playwright mouse.wheel 미지원(호출 시 예외) → 프로그램 스크롤로 대체.
+  // 이 테스트의 의도는 "스크롤 진행 중 콘솔/페이지 에러 0" 검증이며 휠 입력 자체의 검증이 아니다.
   if (!isMobile) {
     await page.mouse.wheel(0, 5000)
   } else {
