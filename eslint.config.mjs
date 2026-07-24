@@ -1,23 +1,10 @@
-import tsParser from '@typescript-eslint/parser'
+import coreWebVitals from 'eslint-config-next/core-web-vitals'
+import typescript from 'eslint-config-next/typescript'
 
-export default [
+const config = [
   { ignores: ['node_modules/**', '.next/**', 'out/**', 'docs/**', 'public/**'] },
-  {
-    files: ['**/*.{js,jsx,ts,tsx}'],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        ecmaFeatures: { jsx: true },
-      },
-      globals: {
-        React: 'readonly',
-      },
-    },
-    rules: {
-      'react/react-in-jsx-scope': 'off',
-      'react/display-name': 'off',
-    },
-  },
+  ...coreWebVitals,
+  ...typescript,
 ]
+
+export default config
