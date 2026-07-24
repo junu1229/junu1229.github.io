@@ -71,8 +71,8 @@ test('Saturn 장면 카피·다이어그램 목록이 노출된다', async ({ pa
   await page.goto('/')
   await expect(page.getByText('Co-founder & Engineer · Saturn Protocol')).toBeAttached()
   await expect(page.getByText('Then, a new mission.')).toBeAttached()
-  await expect(page.getByText('Deposit SOL')).toBeAttached()
-  await expect(page.getByText('Premiums flow back as yield')).toBeAttached()
+  await expect(page.locator('ol.sat-flow').getByText('Deposit SOL')).toBeAttached()
+  await expect(page.locator('ol.sat-flow').getByText('Premiums flow back as yield')).toBeAttached()
   await expect(page.getByText(/Live on Solana devnet/)).toBeAttached()
 })
 
