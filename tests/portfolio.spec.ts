@@ -41,6 +41,12 @@ test('Hero 카피와 EN/KR 토글이 동작한다', async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('lang', 'ko')
 })
 
+test('Launch 장면 카피가 노출된다', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByText('Fueling up: Electronics & Control Engineering')).toBeAttached()
+  await expect(page.getByText('PRE-FLIGHT CHECK')).toBeAttached()
+})
+
 test.describe('reduced motion', () => {
   test.use({ contextOptions: { reducedMotion: 'reduce' } })
   test('pin과 Lenis 없이 전체 콘텐츠가 노출된다', async ({ page }) => {

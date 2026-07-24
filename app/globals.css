@@ -68,3 +68,18 @@ main { position: relative; z-index: 1; }
   padding: 0.5rem 1.2rem; border-radius: 999px;
 }
 .hero-astronaut { width: clamp(90px, 14vw, 150px); margin-top: 1rem; }
+
+.chapter-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+}
+.scene-period { font-family: var(--font-mono), monospace; font-size: 0.8rem; color: #8b93b8; }
+
+.scene-body { max-width: 34rem; margin-top: 0.75rem; color: #cfd6e4; }
+.launch-layout { flex-direction: row; align-items: center; gap: 3rem; flex-wrap: wrap; }
+.launch-checklist { list-style: none; margin-top: 1rem; font-family: var(--font-mono), monospace; font-size: 0.85rem; color: var(--teal); }
+.launch-countdown { margin-top: 1rem; font-family: var(--font-mono), monospace; font-weight: 700; color: var(--rocket-orange); }
+.launch-pad { position: relative; width: clamp(120px, 20vw, 200px); }
+.launch-rocket { width: 100%; }
+.launch-astronaut { position: absolute; bottom: 0; left: -40%; width: 45%; }
+.launch-ground { height: 4px; background: var(--panel-navy); border-radius: 2px; margin-top: 4px; }
