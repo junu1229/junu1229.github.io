@@ -59,6 +59,14 @@ test('Frontend 장면 카피가 노출된다', async ({ page }) => {
   await expect(page.getByText('CHAPTER 02 — TRADING UI')).toBeAttached()
 })
 
+test('핵심 지표 3종이 DOM 텍스트로 존재한다', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByText('2,000+ events/sec').first()).toBeAttached()
+  await expect(page.getByText(/<0\.05% of mark price \(excluding ATR\)/).first()).toBeAttached()
+  await expect(page.getByText(/20K\+ participants/).first()).toBeAttached()
+  await expect(page.getByText('Full-stack Developer — solo backend ownership · Kana Labs')).toBeAttached()
+})
+
 test.describe('reduced motion', () => {
   test.use({ contextOptions: { reducedMotion: 'reduce' } })
   test('pin과 Lenis 없이 전체 콘텐츠가 노출된다', async ({ page }) => {
