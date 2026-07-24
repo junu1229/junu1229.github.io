@@ -17,7 +17,7 @@ export function SaturnArrival() {
     end: '+=250vh',
     build: (tl) => {
       tl.from('.sat-transit', { opacity: 0, ease: 'none', duration: 0.08 }, 0)
-        .to('.sat-transit', { opacity: 0, ease: 'none' }, 0.14)
+        .to('.sat-transit', { opacity: 0, ease: 'none', duration: 0.12 }, 0.14)
         .from('.sat-planet', { scale: 0.3, opacity: 0, transformOrigin: '50% 50%', ease: 'none' }, 0.16)
         .from('.sat-rocket', {
           motionPath: { path: [{ x: -260, y: 160 }, { x: -80, y: 30 }, { x: 0, y: 0 }], curviness: 1.2 },

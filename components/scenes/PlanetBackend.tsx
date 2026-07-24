@@ -34,8 +34,8 @@ export function PlanetBackend() {
       // Beat 1 (0–33%): 파이프라인 + 카운터 (허용 예외: textContent)
       const counter = { v: 0 }
       tl.from('.be-beat-1', { opacity: 0, ease: 'none', duration: 0.05 }, 0)
-        .from('.be-pipe', { scaleX: 0, transformOrigin: 'left', stagger: 0.05, ease: 'none' }, 0.02)
-        .from('.be-particle', { opacity: 0, x: -30, stagger: 0.01, ease: 'none' }, 0.06)
+        .from('.be-pipe', { scaleX: 0, transformOrigin: 'left', stagger: 0.04, ease: 'none', duration: 0.15 }, 0.02)
+        .from('.be-particle', { opacity: 0, x: -30, stagger: 0.01, ease: 'none', duration: 0.1 }, 0.06)
         .to(counter, {
           v: 2000, ease: 'none', duration: 0.2,
           onUpdate: () => {
@@ -43,15 +43,15 @@ export function PlanetBackend() {
               counterRef.current.textContent = `${Math.round(counter.v).toLocaleString('en-US')}+`
           },
         }, 0.05)
-        .to('.be-beat-1', { opacity: 0, ease: 'none' }, 0.3)
+        .to('.be-beat-1', { opacity: 0, ease: 'none', duration: 0.06 }, 0.30)
       // Beat 2 (33–66%): 봇 + P&L 게이지 (transform만)
-      tl.from('.be-beat-2', { opacity: 0, ease: 'none' }, 0.33)
-        .from('.be-quote', { scaleY: 0, transformOrigin: 'bottom', stagger: 0.02, ease: 'none' }, 0.38)
-        .fromTo('.be-pnl-needle', { rotate: -60 }, { rotate: 45, ease: 'none' }, 0.45)
-        .to('.be-beat-2', { opacity: 0, ease: 'none' }, 0.63)
+      tl.from('.be-beat-2', { opacity: 0, ease: 'none', duration: 0.06 }, 0.36)
+        .from('.be-quote', { scaleY: 0, transformOrigin: 'bottom', stagger: 0.02, ease: 'none', duration: 0.12 }, 0.44)
+        .fromTo('.be-pnl-needle', { rotate: -60 }, { rotate: 45, ease: 'none', duration: 0.15 }, 0.50)
+        .to('.be-beat-2', { opacity: 0, ease: 'none', duration: 0.06 }, 0.63)
       // Beat 3 (66–100%): 스케일 — 지갑 낙하
-      tl.from('.be-beat-3', { opacity: 0, ease: 'none' }, 0.66)
-        .from('.be-wallet', { y: -40, opacity: 0, stagger: 0.008, ease: 'none' }, 0.7)
+      tl.from('.be-beat-3', { opacity: 0, ease: 'none', duration: 0.06 }, 0.69)
+        .from('.be-wallet', { y: -40, opacity: 0, stagger: 0.008, ease: 'none', duration: 0.1 }, 0.75)
     },
     { scope: ref, dependencies: [mode, locale], revertOnUpdate: true },
   )

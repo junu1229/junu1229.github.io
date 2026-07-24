@@ -11,6 +11,11 @@ test('이력서 PDF가 200으로 응답한다', async ({ request }) => {
   expect(res.status()).toBe(200)
 })
 
+test('파비콘이 응답한다', async ({ request }) => {
+  const res = await request.get('/icon.svg')
+  expect(res.status()).toBe(200)
+})
+
 test('7개 장면이 렌더된다', async ({ page }) => {
   await page.goto('/')
   await expect(page.locator('[data-scene]')).toHaveCount(7)
