@@ -53,7 +53,7 @@ export const en = {
     period: '2026.03 – present',
     transit: 'Then, a new mission.',
     title: 'Co-founder & Engineer · Saturn Protocol',
-    body: 'A non-custodial covered-call vault on Solana: deposit SOL, earn yield from weekly option premiums — no options expertise required.',
+    body: 'A non-custodial covered-call vault built on Solana, generating yield from weekly option premiums — no options expertise required.',
     diagram: ['Deposit SOL', 'Vault writes weekly calls', 'Dutch auction sells options', 'Premiums flow back as yield'],
     moons:
       'Three Anchor programs — vault · options-token · Dutch auction — wired with CPI, fed by Pyth prices and Helius webhooks. Indexer + read API on Hono/PostgreSQL; dApp on Next.js + Solana Wallet Adapter.',

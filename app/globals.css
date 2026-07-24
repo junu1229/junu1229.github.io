@@ -106,3 +106,20 @@ main { position: relative; z-index: 1; }
   display: inline-block; margin-left: 0.75rem;
   font-family: var(--font-mono), monospace; font-weight: 700; color: var(--rocket-orange);
 }
+
+.sat-transit {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-baloo), sans-serif; font-size: clamp(1.4rem, 4vw, 2.4rem);
+  color: var(--cream); pointer-events: none;
+}
+.sat-planet { width: clamp(220px, 30vw, 340px); }
+.sat-astronaut { position: absolute; bottom: -8%; left: -14%; width: clamp(60px, 8vw, 90px); }
+.sat-flow { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; }
+.sat-flow-step { position: relative; display: flex; align-items: center; gap: 0.6rem; padding-bottom: 1.4rem; }
+.sat-flow-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  font-family: var(--font-mono), monospace; font-size: 0.75rem; font-weight: 700;
+}
+.sat-flow-connector { position: absolute; left: 0.65rem; bottom: 0; width: 10px; height: 22px; }
+.sat-status { margin-top: 1rem; font-family: var(--font-mono), monospace; font-size: 0.8rem; color: var(--saturn-gold); }

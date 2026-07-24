@@ -67,6 +67,15 @@ test('핵심 지표 3종이 DOM 텍스트로 존재한다', async ({ page }) => 
   await expect(page.getByText('Full-stack Developer — solo backend ownership · Kana Labs')).toBeAttached()
 })
 
+test('Saturn 장면 카피·다이어그램 목록이 노출된다', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByText('Co-founder & Engineer · Saturn Protocol')).toBeAttached()
+  await expect(page.getByText('Then, a new mission.')).toBeAttached()
+  await expect(page.getByText('Deposit SOL')).toBeAttached()
+  await expect(page.getByText('Premiums flow back as yield')).toBeAttached()
+  await expect(page.getByText(/Live on Solana devnet/)).toBeAttached()
+})
+
 test.describe('reduced motion', () => {
   test.use({ contextOptions: { reducedMotion: 'reduce' } })
   test('pin과 Lenis 없이 전체 콘텐츠가 노출된다', async ({ page }) => {
