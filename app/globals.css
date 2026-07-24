@@ -1,1 +1,35 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --space-navy: #0B1026;
+  --panel-navy: #1A2340;
+  --rocket-orange: #FF9F43;
+  --saturn-gold: #FFB84D;
+  --teal: #4DD8C0;
+  --coral: #FF6B6B;
+  --purple: #A29BFE;
+  --cream: #FDF6E3;
+  --on-accent: #0B1026;
+  --ring-sand: #F2D09A;
+}
+
+html { scroll-behavior: auto; }
+html, body { overflow-x: clip; }
+
+body {
+  background: var(--space-navy);
+  color: var(--cream);
+  font-family: var(--font-pretendard), 'Apple SD Gothic Neo', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: var(--font-baloo), var(--font-pretendard), sans-serif; line-height: 1.15; }
+
+a { color: inherit; }
+
+:focus-visible { outline: 2px solid var(--cream); outline-offset: 2px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
