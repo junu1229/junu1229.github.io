@@ -83,3 +83,7 @@ main { position: relative; z-index: 1; }
 .launch-rocket { width: 100%; }
 .launch-astronaut { position: absolute; bottom: 0; left: -40%; width: 45%; }
 .launch-ground { height: 4px; background: var(--panel-navy); border-radius: 2px; margin-top: 4px; }
+.planet-layout { flex-direction: row; align-items: center; gap: 3rem; flex-wrap: wrap; }
+.planet-visual { position: relative; flex-shrink: 0; }
+.planet-rocket { position: absolute; top: -10%; right: -18%; width: 56px; }
+.transit-path { position: absolute; left: -60%; bottom: -20%; width: 130%; pointer-events: none; }
