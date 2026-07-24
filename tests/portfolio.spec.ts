@@ -76,6 +76,22 @@ test('Saturn 장면 카피·다이어그램 목록이 노출된다', async ({ pa
   await expect(page.getByText(/Live on Solana devnet/)).toBeAttached()
 })
 
+test('연락처 링크 4종의 href가 정확하다', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', 'https://github.com/junu1229')
+  await expect(page.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', 'https://www.linkedin.com/in/junwoooooo-kim/')
+  await expect(page.getByRole('link', { name: 'Email' })).toHaveAttribute('href', 'mailto:junu1229@gmail.com')
+  await expect(page.getByRole('link', { name: 'Download resume (PDF)' })).toHaveAttribute('href', '/Junwoo_Kim_Resume.pdf')
+})
+
+test('스킬 5그룹이 노출된다', async ({ page }) => {
+  await page.goto('/')
+  for (const name of ['Languages', 'Blockchain', 'Backend & Infra', 'Frontend', 'Trading Systems']) {
+    await expect(page.getByText(name, { exact: true })).toBeAttached()
+  }
+  await expect(page.getByText('Rust', { exact: true })).toBeAttached()
+})
+
 test.describe('reduced motion', () => {
   test.use({ contextOptions: { reducedMotion: 'reduce' } })
   test('pin과 Lenis 없이 전체 콘텐츠가 노출된다', async ({ page }) => {

@@ -123,3 +123,18 @@ main { position: relative; z-index: 1; }
 }
 .sat-flow-connector { position: absolute; left: 0.65rem; bottom: 0; width: 10px; height: 22px; }
 .sat-status { margin-top: 1rem; font-family: var(--font-mono), monospace; font-size: 0.8rem; color: var(--saturn-gold); }
+
+.landing-head { display: flex; align-items: center; gap: 1.5rem; }
+.landing-astronaut { width: clamp(80px, 10vw, 120px); }
+.skill-constellations { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.skill-group { border: 2px solid; border-radius: 12px; padding: 1rem 1.2rem; background: var(--panel-navy); flex: 1 1 14rem; }
+.skill-group-name { font-size: 0.85rem; font-family: var(--font-mono), monospace; }
+.skill-list { list-style: none; margin-top: 0.5rem; font-size: 0.85rem; color: #cfd6e4; }
+.skill-item::before { content: '★ '; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; align-items: center; }
+.contact-links a { font-family: var(--font-mono), monospace; text-decoration: underline; text-underline-offset: 4px; }
+.resume-cta {
+  background: var(--rocket-orange); color: var(--on-accent) !important;
+  text-decoration: none !important; font-weight: 700;
+  padding: 0.7rem 1.4rem; border-radius: 999px;
+}
