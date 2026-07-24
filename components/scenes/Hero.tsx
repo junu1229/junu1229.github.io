@@ -11,7 +11,7 @@ export function Hero() {
 
   useSceneTimeline({
     scope: ref,
-    end: '+=200vh',
+    endVh: 200,
     build: (tl) => {
       // 전역 별밭을 가볍게 파랄랙스 (0→1 전환: 별밭 하강 연출)
       // 주의: useGSAP scope 밖 요소이므로 문자열 셀렉터 대신 직접 조회한다

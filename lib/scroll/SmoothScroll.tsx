@@ -21,6 +21,7 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
 
     return () => {
       gsap.ticker.remove(tick)
+      gsap.ticker.lagSmoothing(500, 33)
       lenis.destroy()
     }
   }, [mode])

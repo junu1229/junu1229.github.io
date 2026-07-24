@@ -1,11 +1,12 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { useT, useLocale } from '@/lib/i18n/LanguageProvider'
 import { useMotionMode } from '@/lib/scroll/MotionProvider'
 import { gsap, useGSAP } from '@/lib/scroll/gsap'
 import { ChapterLabel } from '@/components/space/ChapterLabel'
 import { StatChip } from '@/components/space/StatChip'
+import { Rocket } from '@/components/space/Rocket'
 
 const WALLET_COUNT = 24 // 지갑 glyph — 장면당 40개 상한 이내
 
@@ -16,14 +17,14 @@ export function PlanetBackend() {
   const ref = useRef<HTMLElement>(null)
   const counterRef = useRef<HTMLSpanElement>(null)
 
-  useEffect(() => {
-    if (mode === 'full') ref.current?.setAttribute('data-animated', 'true')
-    else ref.current?.removeAttribute('data-animated')
-  }, [mode])
-
   useGSAP(
     () => {
-      if (mode !== 'full' || !ref.current) return
+      if (!ref.current) return
+      if (mode !== 'full') {
+        ref.current.removeAttribute('data-animated')
+        return
+      }
+      ref.current.setAttribute('data-animated', 'true')
       const tl = gsap.timeline({
         scrollTrigger: {
           // ScrollTrigger는 end 문자열의 'vh' 단위를 픽셀로 오인식하므로 함수 기반으로 변환한다.
@@ -47,7 +48,7 @@ export function PlanetBackend() {
       // Beat 2 (33–66%): 봇 + P&L 게이지 (transform만)
       tl.from('.be-beat-2', { opacity: 0, ease: 'none', duration: 0.06 }, 0.36)
         .from('.be-quote', { scaleY: 0, transformOrigin: 'bottom', stagger: 0.02, ease: 'none', duration: 0.12 }, 0.44)
-        .fromTo('.be-pnl-needle', { rotate: -60 }, { rotate: 45, ease: 'none', duration: 0.15 }, 0.50)
+        .fromTo('.be-pnl-needle', { rotate: -60, transformOrigin: '50% 100%' }, { rotate: 45, transformOrigin: '50% 100%', ease: 'none', duration: 0.15 }, 0.50)
         .to('.be-beat-2', { opacity: 0, ease: 'none', duration: 0.06 }, 0.63)
       // Beat 3 (66–100%): 스케일 — 지갑 낙하
       tl.from('.be-beat-3', { opacity: 0, ease: 'none', duration: 0.06 }, 0.69)
@@ -63,6 +64,7 @@ export function PlanetBackend() {
           <ChapterLabel accent="var(--purple)">{t.backend.label}</ChapterLabel>
           <p className="scene-period">{t.backend.period}</p>
           <h2>{t.backend.title}</h2>
+          <Rocket className="be-rocket" />
         </header>
         <div className="be-beats">
           <article className="be-beat be-beat-1">
@@ -95,7 +97,7 @@ export function PlanetBackend() {
               ))}
               <g transform="translate(160 40)">
                 <path d="M -25 0 A 25 25 0 0 1 25 0" stroke="var(--panel-navy)" strokeWidth="8" fill="none" />
-                <rect className="be-pnl-needle" x="-1.5" y="-24" width="3" height="24" fill="var(--saturn-gold)" style={{ transformOrigin: '0 0' }} />
+                <rect className="be-pnl-needle" x="-1.5" y="-24" width="3" height="24" fill="var(--saturn-gold)" />
               </g>
             </svg>
           </article>

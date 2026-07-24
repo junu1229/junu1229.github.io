@@ -13,7 +13,7 @@ export function PlanetDevrel() {
 
   useSceneTimeline({
     scope: ref,
-    end: '+=200vh',
+    endVh: 200,
     build: (tl) => {
       tl.from('.devrel-rocket', {
         motionPath: {

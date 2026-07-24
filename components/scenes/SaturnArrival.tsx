@@ -14,7 +14,7 @@ export function SaturnArrival() {
 
   useSceneTimeline({
     scope: ref,
-    end: '+=250vh',
+    endVh: 250,
     build: (tl) => {
       tl.from('.sat-transit', { opacity: 0, ease: 'none', duration: 0.08 }, 0)
         .to('.sat-transit', { opacity: 0, ease: 'none', duration: 0.12 }, 0.14)

@@ -19,7 +19,7 @@ export function PlanetFrontend() {
 
   useSceneTimeline({
     scope: ref,
-    end: '+=200vh',
+    endVh: 200,
     build: (tl) => {
       tl.from('.fe-rocket', {
         motionPath: { path: [{ x: -300, y: 180 }, { x: -100, y: 40 }, { x: 0, y: 0 }], curviness: 1.2 },

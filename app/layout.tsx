@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://junu1229.github.io'),
   title: 'Junwoo Kim — Rust & On-chain Engineer',
   description:
-    'Rust engineer specializing in on-chain protocols and trading infrastructure. Co-founder of Saturn Protocol; previously solo backend engineer on a live Aptos perp DEX.',
+    'Rust engineer specializing in on-chain protocols and trading infrastructure. Co-founder of Saturn Protocol; previously full-stack developer with solo backend ownership on a live Aptos perp DEX.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,9 +1,8 @@
-export type AstronautPose = 'float' | 'thumbs-up' | 'pilot' | 'observe' | 'flag'
+export type AstronautPose = 'float' | 'thumbs-up' | 'observe' | 'flag'
 
 const POSE_TRANSFORM: Record<AstronautPose, string> = {
   float: 'rotate(-8 50 60)',
   'thumbs-up': 'rotate(0 50 60)',
-  pilot: 'rotate(4 50 60)',
   observe: 'rotate(-4 50 60)',
   flag: 'rotate(0 50 60)',
 }

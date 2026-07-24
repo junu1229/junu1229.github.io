@@ -15,11 +15,10 @@ export function Launch() {
 
   useSceneTimeline({
     scope: ref,
-    end: '+=200vh',
+    endVh: 200,
     build: (tl) => {
       tl.from('.launch-check', { opacity: 0, x: -20, stagger: 0.15, ease: 'none' }, 0)
         .from('.launch-countdown', { opacity: 0, ease: 'none' }, 0.45)
-        .from('.launch-rocket', { y: 0, ease: 'none' }, 0.55)
         .to('.launch-rocket', { y: '-70vh', ease: 'power2.in' }, 0.6)
         .to('.launch-astronaut', { opacity: 0, ease: 'none' }, 0.55)
     },
