@@ -1,0 +1,10 @@
+# dependencies / build
+node_modules/
+.next/
+out/
+
+# tooling
+.superpowers/
+
+# os
+.DS_Store
