@@ -53,6 +53,12 @@ test('Dev-rel 장면 카피가 노출된다', async ({ page }) => {
   await expect(page.getByText('CHAPTER 01 — FIRST ORBIT')).toBeAttached()
 })
 
+test('Frontend 장면 카피가 노출된다', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByText('Frontend Developer · Kana Labs')).toBeAttached()
+  await expect(page.getByText('CHAPTER 02 — TRADING UI')).toBeAttached()
+})
+
 test.describe('reduced motion', () => {
   test.use({ contextOptions: { reducedMotion: 'reduce' } })
   test('pin과 Lenis 없이 전체 콘텐츠가 노출된다', async ({ page }) => {
