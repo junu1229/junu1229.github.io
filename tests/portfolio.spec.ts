@@ -90,6 +90,7 @@ test('Saturn 장면 카피·다이어그램 목록이 노출된다', async ({ pa
   await expect(page.locator('ol.sat-flow').getByText('Deposit SOL')).toBeAttached()
   await expect(page.locator('ol.sat-flow').getByText('Premiums flow back as yield')).toBeAttached()
   await expect(page.getByText(/Live on Solana devnet/)).toBeAttached()
+  await expect(page.getByText(/Contracts: three Anchor programs/)).toBeAttached()
 })
 
 test('연락처 링크 4종의 href가 정확하다', async ({ page }) => {

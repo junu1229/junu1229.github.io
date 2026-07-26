@@ -53,11 +53,11 @@ export const en = {
     period: '2026.03 – present',
     transit: 'Then, a new mission.',
     title: 'Co-founder & Engineer · Saturn Protocol',
-    body: 'A non-custodial covered-call vault on Solana: deposit SOL, earn yield from weekly option premiums — no options expertise required.',
-    diagram: ['Deposit SOL', 'Vault writes weekly calls', 'Dutch auction sells options', 'Premiums flow back as yield'],
+    body: 'A yield app on Solana: deposit SOL, earn from weekly option premiums — no options expertise required. (Non-custodial covered-call vault.)',
+    diagram: ['Deposit SOL', 'Vault issues weekly call options', 'Dutch auction sells options', 'Premiums flow back as yield'],
     moons:
-      'Three Anchor programs — vault · options-token · Dutch auction — wired with CPI, fed by Pyth prices and Helius webhooks. Indexer + read API on Hono/PostgreSQL; dApp on Next.js + Solana Wallet Adapter.',
-    status: 'Live on Solana devnet · Submitted to Colosseum 2026 · Mainnet pre-flight (audit · KMS · production RPC)',
+      'Full stack. Contracts: three Anchor programs (vault · options-token · Dutch auction) wired with CPI, fed by Pyth prices and Helius webhooks. Backend: indexer + read API on Hono/PostgreSQL. Frontend: Next.js dApp + Solana Wallet Adapter.',
+    status: 'Live on Solana devnet (a test network) · Submitted to Colosseum 2026 · Mainnet pre-flight (audit · KMS · production RPC)',
   },
   landing: {
     label: 'MISSION CONTROL',

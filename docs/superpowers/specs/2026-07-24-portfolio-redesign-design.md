@@ -410,13 +410,13 @@ Playwright 스위트 (Chromium + mobile WebKit):
 |---|---|---|
 | saturn.transit | Then, a new mission. | 그리고, 새로운 미션. |
 | saturn.title | Co-founder & Engineer · Saturn Protocol | 공동창업자 & 엔지니어 · Saturn Protocol |
-| saturn.body | A non-custodial covered-call vault on Solana: deposit SOL, earn yield from weekly option premiums — no options expertise required. | 솔라나의 논커스터디얼 커버드콜 볼트: SOL을 예치하면 주간 옵션 프리미엄에서 수익이 발생합니다 — 옵션 지식이 없어도 됩니다. |
+| saturn.body | A yield app on Solana: deposit SOL, earn from weekly option premiums — no options expertise required. (Non-custodial covered-call vault.) | 솔라나 기반 수익형 앱: SOL을 예치하면 주간 옵션 프리미엄에서 수익이 발생합니다 — 옵션 지식이 없어도 됩니다. (논커스터디얼 커버드콜 볼트) |
 | saturn.diagram.1 | Deposit SOL | SOL 예치 |
-| saturn.diagram.2 | Vault writes weekly calls | 볼트가 주간 콜옵션 발행 |
+| saturn.diagram.2 | Vault issues weekly call options | 볼트가 주간 콜옵션 발행 |
 | saturn.diagram.3 | Dutch auction sells options | 더치 옥션으로 옵션 판매 |
 | saturn.diagram.4 | Premiums flow back as yield | 프리미엄이 수익으로 환원 |
-| saturn.moons | Three Anchor programs — vault · options-token · Dutch auction — wired with CPI, fed by Pyth prices and Helius webhooks. Indexer + read API on Hono/PostgreSQL; dApp on Next.js + Solana Wallet Adapter. | 3개의 Anchor 프로그램 — vault · options-token · Dutch auction — 을 CPI로 연결하고 Pyth 가격 피드와 Helius 웹훅을 수신합니다. 인덱서 + 읽기 API는 Hono/PostgreSQL, dApp은 Next.js + Solana Wallet Adapter. |
-| saturn.status | Live on Solana devnet · Submitted to Colosseum 2026 · Mainnet pre-flight (audit · KMS · production RPC) | 솔라나 데브넷 라이브 · Colosseum 2026 제출 · 메인넷 준비 중 (감사 · KMS · 프로덕션 RPC) |
+| saturn.moons | Full stack. Contracts: three Anchor programs (vault · options-token · Dutch auction) wired with CPI, fed by Pyth prices and Helius webhooks. Backend: indexer + read API on Hono/PostgreSQL. Frontend: Next.js dApp + Solana Wallet Adapter. | 풀스택. 컨트랙트: 3개의 Anchor 프로그램(vault · options-token · Dutch auction)을 CPI로 연결하고 Pyth 가격 피드와 Helius 웹훅을 수신합니다. 백엔드: 인덱서 + 읽기 API는 Hono/PostgreSQL. 프론트엔드: dApp은 Next.js + Solana Wallet Adapter. |
+| saturn.status | Live on Solana devnet (a test network) · Submitted to Colosseum 2026 · Mainnet pre-flight (audit · KMS · production RPC) | 솔라나 데브넷(테스트 네트워크) 라이브 · Colosseum 2026 제출 · 메인넷 준비 중 (감사 · KMS · 프로덕션 RPC) |
 
 ### landing (라벨: MISSION CONTROL)
 | key | en | ko |
