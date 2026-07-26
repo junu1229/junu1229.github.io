@@ -8,7 +8,7 @@ export const ko: Dictionary = {
   hero: {
     title: 'JUNWOO KIM',
     subtitle: '한눈에 보는 커리어 여행',
-    tagline: '러스트 · 온체인 프로토콜 · 트레이딩 인프라',
+    tagline: '풀스택 · 러스트 & 타입스크립트 · 데이터 파이프라인부터 UI까지',
     cta: '스크롤해서 발사',
   },
   launch: {

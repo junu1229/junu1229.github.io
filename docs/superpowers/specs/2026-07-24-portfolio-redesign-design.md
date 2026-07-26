@@ -368,7 +368,7 @@ Playwright 스위트 (Chromium + mobile WebKit):
 |---|---|---|
 | hero.title | JUNWOO KIM | JUNWOO KIM |
 | hero.subtitle | A career, in a nutshell | 한눈에 보는 커리어 여행 |
-| hero.tagline | Rust · on-chain protocols · trading infrastructure | 러스트 · 온체인 프로토콜 · 트레이딩 인프라 |
+| hero.tagline | Full-stack · Rust & TypeScript · from data pipelines to UI | 풀스택 · 러스트 & 타입스크립트 · 데이터 파이프라인부터 UI까지 |
 | hero.cta | SCROLL TO LAUNCH | 스크롤해서 발사 |
 | languageToggle.ariaLabel | Switch language | 언어 전환 |
 | skipLink | Skip to content | 본문으로 건너뛰기 |

@@ -8,7 +8,7 @@ export const en = {
   hero: {
     title: 'JUNWOO KIM',
     subtitle: 'A career, in a nutshell',
-    tagline: 'Rust · on-chain protocols · trading infrastructure',
+    tagline: 'Full-stack · Rust & TypeScript · from data pipelines to UI',
     cta: 'SCROLL TO LAUNCH',
   },
   launch: {

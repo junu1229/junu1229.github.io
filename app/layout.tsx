@@ -13,9 +13,9 @@ const pretendard = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://junu1229.github.io'),
-  title: 'Junwoo Kim — Rust & On-chain Engineer',
+  title: 'Junwoo Kim — Full-stack Engineer',
   description:
-    'Rust engineer specializing in on-chain protocols and trading infrastructure. Co-founder of Saturn Protocol; previously full-stack developer with solo backend ownership on a live Aptos perp DEX.',
+    'Full-stack engineer who ships end to end — Rust services and data pipelines through React/Next.js interfaces. Co-founder of Saturn Protocol; previously solo-owned a production data pipeline handling 2,000+ events/sec on an Aptos perpetuals DEX.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

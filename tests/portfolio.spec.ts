@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 
 test('페이지가 로드되고 타이틀이 있다', async ({ page }) => {
   await page.goto('/')
-  await expect(page).toHaveTitle('Junwoo Kim — Rust & On-chain Engineer')
+  await expect(page).toHaveTitle('Junwoo Kim — Full-stack Engineer')
   await expect(page.locator('html')).toHaveAttribute('lang', 'en')
 })
 
@@ -45,9 +45,11 @@ test('Hero 카피와 EN/KR 토글이 동작한다', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByRole('heading', { name: 'JUNWOO KIM' })).toBeVisible()
   await expect(page.getByText('A career, in a nutshell')).toBeVisible()
+  await expect(page.getByText('Full-stack · Rust & TypeScript · from data pipelines to UI')).toBeVisible()
 
   await page.getByRole('button', { name: 'Switch language' }).click()
   await expect(page.getByText('한눈에 보는 커리어 여행')).toBeVisible()
+  await expect(page.getByText('풀스택 · 러스트 & 타입스크립트 · 데이터 파이프라인부터 UI까지')).toBeVisible()
   await expect(page.locator('html')).toHaveAttribute('lang', 'ko')
 
   await page.reload()
