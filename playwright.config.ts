@@ -1,7 +1,9 @@
 import { defineConfig, devices } from '@playwright/test'
 
 // 포트는 PW_PORT로 덮어쓸 수 있다. 기본값이 3000이 아닌 이유는 아래 reuseExistingServer 주석 참고.
-const port = Number(process.env.PW_PORT ?? 3100)
+// `??`가 아닌 `||`를 쓰는 이유: PW_PORT가 빈 문자열이거나 숫자로 파싱되지 않으면(Number('')는 0,
+// Number('abc')는 NaN) 조용히 깨진 baseURL이 되는 것을 막기 위해 falsy 값을 모두 기본값으로 폴백한다.
+const port = Number(process.env.PW_PORT) || 3100
 const baseURL = `http://127.0.0.1:${port}`
 
 export default defineConfig({

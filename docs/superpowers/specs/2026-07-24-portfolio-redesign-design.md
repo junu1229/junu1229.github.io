@@ -270,19 +270,24 @@ steps:
 ```
 `out/` 정적 서버는 Playwright가 직접 관리한다 — `playwright.config.ts` 계약:
 ```ts
+const port = Number(process.env.PW_PORT) || 3100
 webServer: {
-  command: 'npx serve out -l 3000',
-  url: 'http://127.0.0.1:3000',
-  reuseExistingServer: !process.env.CI,
+  command: `npx serve out -l ${port}`,
+  url: `http://127.0.0.1:${port}`,
+  reuseExistingServer: false,
 }
 ```
+포트는 `PW_PORT`로 덮어쓸 수 있으며 기본값은 3100(3000 아님). `reuseExistingServer`는
+항상 `false`로 고정한다 — 재사용을 허용하면 같은 포트를 점유한 **다른 프로젝트**의
+앱을 그대로 테스트 대상으로 삼아 테스트 스위트 전체가 조용히 엉뚱한 사이트를
+검사하는 문제가 있었다.
 deploy job은 build job을 `needs`로 참조, `actions/deploy-pages@v4` +
 `github-pages` environment 지정. 저장소 설정에서 Pages 소스를
 "GitHub Actions"로 1회 수동 변경 필요.
 
 ### SEO/메타
 - `metadataBase: new URL('https://junu1229.github.io')`
-- title: "Junwoo Kim — Rust & On-chain Engineer"
+- title: "Junwoo Kim — Full-stack Engineer"
 - OG 이미지는 `app/opengraph-image.png` 파일 컨벤션 사용
 - 모든 카피는 실제 DOM 텍스트로 존재
 

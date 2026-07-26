@@ -13,7 +13,7 @@ const html = `<!DOCTYPE html><html><body style="margin:0">
   <div style="position:absolute;top:190px;left:90px">
     <div style="font-size:72px;font-weight:800;color:#FDF6E3">JUNWOO KIM</div>
     <div style="font-size:34px;color:#FFB84D;margin-top:16px">A career, in a nutshell</div>
-    <div style="font-size:24px;color:#8b93b8;margin-top:14px">Rust · on-chain protocols · trading infrastructure</div>
+    <div style="font-size:24px;color:#8b93b8;margin-top:14px">Full-stack · Rust & TypeScript · from data pipelines to UI</div>
   </div>
 </div></body></html>`
 
