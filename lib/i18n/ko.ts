@@ -27,7 +27,7 @@ export const ko: Dictionary = {
     label: 'CHAPTER 02 — TRADING UI',
     period: '2024.01 – 2024.06',
     title: '프론트엔드 개발자 · Kana Labs',
-    body: '옵션·현물·선물 전반의 리더보드, 라이브 트레이딩 UI, 커스텀 차팅을 만들었습니다. 멀티체인 Web3 스택(Arbitrum · BSC · Aptos)을 통합하고 코드베이스 리팩터링을 이끌었습니다.',
+    body: '웹 인터페이스를 만들었습니다 — 옵션·현물·선물 전반의 리더보드, 라이브 트레이딩 UI, 커스텀 차팅. 코드베이스 리팩터링을 이끌고 멀티체인 Web3 스택(Arbitrum · BSC · Aptos)을 통합했습니다.',
   },
   backend: {
     label: 'CHAPTER 03 — THE GIANT',
@@ -35,17 +35,17 @@ export const ko: Dictionary = {
     title: '풀스택 개발자 — 백엔드 단독 담당 · Kana Labs',
     pipeline: {
       title: '파이프라인',
-      body: 'Kana의 Aptos 무기한 선물 DEX 데이터 파이프라인(온체인 인덱서 → ETL → 읽기 API)을 처음부터 끝까지 단독으로 맡아 프로덕션에서 운영했습니다. Rust · PostgreSQL · WebSockets · RabbitMQ.',
+      body: '데이터 파이프라인을 수집(온체인 인덱서) → ETL → 읽기 API까지 처음부터 끝까지 단독으로 맡아 프로덕션에서 운영했습니다. Rust · PostgreSQL · WebSockets · RabbitMQ. (Kana의 Aptos 무기한 선물 DEX)',
       stat: '2,000+ events/sec',
       statSub: '3개월간 약 200GB',
     },
     bots: {
       title: '트레이딩 봇',
-      body: '마크 가격 대비 0.05% 미만(ATR 구간 제외)으로 유동성을 유지하는 프로덕션 마켓메이킹 봇(Rust)과, 트레이딩 운영을 순이익으로 전환시킨 거래소 간 아비트라지 봇(Rust/Python)을 배포했습니다.',
+      body: '자동화 봇 두 개를 배포했습니다 — 마크 가격 대비 0.05% 미만(ATR 구간 제외)으로 유동성을 유지한 프로덕션 마켓메이킹 봇(Rust), 그리고 트레이딩 운영을 순이익으로 전환한 거래소 간 아비트라지 봇(Rust/Python).',
     },
     scale: {
       title: '스케일',
-      body: '20K+ 참여자를 지원하며 파트너(T Wallet · Factblock · AhnLab) 전반의 자동화된 보상 시스템으로 총 20K APT를 분배했습니다. 모바일 최적화 트레이딩 프론트엔드로 플랫폼 채택률을 30% 높였습니다.',
+      body: '모바일 최적화 트레이딩 프론트엔드로 플랫폼 채택률을 30% 높였습니다. 20K+ 참여자를 지원하며 파트너(T Wallet · Factblock · AhnLab) 전반의 자동화된 보상 시스템으로 총 20K APT를 분배했습니다.',
     },
   },
   saturn: {

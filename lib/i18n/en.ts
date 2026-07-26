@@ -27,7 +27,7 @@ export const en = {
     label: 'CHAPTER 02 — TRADING UI',
     period: '2024.01 – 2024.06',
     title: 'Frontend Developer · Kana Labs',
-    body: 'Built leaderboards, live trading UIs, and custom charting across options, spot, and futures. Integrated a multi-chain Web3 stack (Arbitrum · BSC · Aptos) and led a codebase refactor.',
+    body: 'Built web interfaces — leaderboards, live trading UIs, and custom charting — across options, spot, and futures. Led a codebase refactor and integrated a multi-chain Web3 stack (Arbitrum · BSC · Aptos).',
   },
   backend: {
     label: 'CHAPTER 03 — THE GIANT',
@@ -35,17 +35,17 @@ export const en = {
     title: 'Full-stack Developer — solo backend ownership · Kana Labs',
     pipeline: {
       title: 'The pipeline',
-      body: "Owned Kana's Aptos perp DEX data pipeline end to end — on-chain indexer → ETL → read API — live in production. Rust, PostgreSQL, WebSockets, RabbitMQ.",
+      body: "Owned a data pipeline end to end — ingestion (on-chain indexer) → ETL → read API — live in production. Rust, PostgreSQL, WebSockets, RabbitMQ. (Kana's Aptos perp DEX)",
       stat: '2,000+ events/sec',
       statSub: '~200GB over 3 months',
     },
     bots: {
       title: 'The trading bots',
-      body: 'Deployed a production market-making bot (Rust) that kept liquidity within <0.05% of mark price (excluding ATR), and a cross-exchange arbitrage bot (Rust/Python) that turned the trading operation net-positive.',
+      body: 'Deployed two automation bots — a market-making bot (Rust) that kept liquidity within <0.05% of mark price (excluding ATR) in production, and a cross-exchange arbitrage bot (Rust/Python) that turned the trading operation net-positive.',
     },
     scale: {
       title: 'Scale',
-      body: 'Supported 20K+ participants and distributed a total of 20K APT through automated reward systems across partners (T Wallet · Factblock · AhnLab). Shipped a mobile-optimized trading frontend that lifted platform adoption by 30%.',
+      body: 'Shipped a mobile-optimized trading frontend that lifted platform adoption by 30%. Supported 20K+ participants and distributed a total of 20K APT through automated reward systems across partners (T Wallet · Factblock · AhnLab).',
     },
   },
   saturn: {

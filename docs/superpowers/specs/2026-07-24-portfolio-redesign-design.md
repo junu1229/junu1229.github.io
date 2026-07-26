@@ -390,20 +390,20 @@ Playwright 스위트 (Chromium + mobile WebKit):
 | key | en | ko |
 |---|---|---|
 | frontend.title | Frontend Developer · Kana Labs | 프론트엔드 개발자 · Kana Labs |
-| frontend.body | Built leaderboards, live trading UIs, and custom charting across options, spot, and futures. Integrated a multi-chain Web3 stack (Arbitrum · BSC · Aptos) and led a codebase refactor. | 옵션·현물·선물 전반의 리더보드, 라이브 트레이딩 UI, 커스텀 차팅을 만들었습니다. 멀티체인 Web3 스택(Arbitrum · BSC · Aptos)을 통합하고 코드베이스 리팩터링을 이끌었습니다. |
+| frontend.body | Built web interfaces — leaderboards, live trading UIs, and custom charting — across options, spot, and futures. Led a codebase refactor and integrated a multi-chain Web3 stack (Arbitrum · BSC · Aptos). | 웹 인터페이스를 만들었습니다 — 옵션·현물·선물 전반의 리더보드, 라이브 트레이딩 UI, 커스텀 차팅. 코드베이스 리팩터링을 이끌고 멀티체인 Web3 스택(Arbitrum · BSC · Aptos)을 통합했습니다. |
 
 ### backend (라벨: CHAPTER 03 — THE GIANT, 기간: 2024.07 – 2026.03)
 | key | en | ko |
 |---|---|---|
 | backend.title | Full-stack Developer — solo backend ownership · Kana Labs | 풀스택 개발자 — 백엔드 단독 담당 · Kana Labs |
 | backend.pipeline.title | The pipeline | 파이프라인 |
-| backend.pipeline.body | Owned Kana's Aptos perp DEX data pipeline end to end — on-chain indexer → ETL → read API — live in production. Rust, PostgreSQL, WebSockets, RabbitMQ. | Kana의 Aptos 무기한 선물 DEX 데이터 파이프라인(온체인 인덱서 → ETL → 읽기 API)을 처음부터 끝까지 단독으로 맡아 프로덕션에서 운영했습니다. Rust · PostgreSQL · WebSockets · RabbitMQ. |
+| backend.pipeline.body | Owned a data pipeline end to end — ingestion (on-chain indexer) → ETL → read API — live in production. Rust, PostgreSQL, WebSockets, RabbitMQ. (Kana's Aptos perp DEX) | 데이터 파이프라인을 수집(온체인 인덱서) → ETL → 읽기 API까지 처음부터 끝까지 단독으로 맡아 프로덕션에서 운영했습니다. Rust · PostgreSQL · WebSockets · RabbitMQ. (Kana의 Aptos 무기한 선물 DEX) |
 | backend.pipeline.stat | 2,000+ events/sec | 2,000+ events/sec |
 | backend.pipeline.statSub | ~200GB over 3 months | 3개월간 약 200GB |
 | backend.bots.title | The trading bots | 트레이딩 봇 |
-| backend.bots.body | Deployed a production market-making bot (Rust) that kept liquidity within <0.05% of mark price (excluding ATR), and a cross-exchange arbitrage bot (Rust/Python) that turned the trading operation net-positive. | 마크 가격 대비 0.05% 미만(ATR 구간 제외)으로 유동성을 유지하는 프로덕션 마켓메이킹 봇(Rust)과, 트레이딩 운영을 순이익으로 전환시킨 거래소 간 아비트라지 봇(Rust/Python)을 배포했습니다. |
+| backend.bots.body | Deployed two automation bots — a market-making bot (Rust) that kept liquidity within <0.05% of mark price (excluding ATR) in production, and a cross-exchange arbitrage bot (Rust/Python) that turned the trading operation net-positive. | 자동화 봇 두 개를 배포했습니다 — 마크 가격 대비 0.05% 미만(ATR 구간 제외)으로 유동성을 유지한 프로덕션 마켓메이킹 봇(Rust), 그리고 트레이딩 운영을 순이익으로 전환한 거래소 간 아비트라지 봇(Rust/Python). |
 | backend.scale.title | Scale | 스케일 |
-| backend.scale.body | Supported 20K+ participants and distributed a total of 20K APT through automated reward systems across partners (T Wallet · Factblock · AhnLab). Shipped a mobile-optimized trading frontend that lifted platform adoption by 30%. | 20K+ 참여자를 지원하며 파트너(T Wallet · Factblock · AhnLab) 전반의 자동화된 보상 시스템으로 총 20K APT를 분배했습니다. 모바일 최적화 트레이딩 프론트엔드로 플랫폼 채택률을 30% 높였습니다. |
+| backend.scale.body | Shipped a mobile-optimized trading frontend that lifted platform adoption by 30%. Supported 20K+ participants and distributed a total of 20K APT through automated reward systems across partners (T Wallet · Factblock · AhnLab). | 모바일 최적화 트레이딩 프론트엔드로 플랫폼 채택률을 30% 높였습니다. 20K+ 참여자를 지원하며 파트너(T Wallet · Factblock · AhnLab) 전반의 자동화된 보상 시스템으로 총 20K APT를 분배했습니다. |
 
 ### saturn (라벨: CHAPTER 04 — DESTINATION, 기간: 2026.03 – present / 2026.03 – 현재)
 | key | en | ko |
