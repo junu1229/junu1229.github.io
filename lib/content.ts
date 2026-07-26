@@ -6,10 +6,10 @@ export const LINKS = {
 } as const
 
 export const SKILL_GROUPS = [
-  { name: 'Languages', items: ['Rust', 'Python', 'TypeScript'] },
-  { name: 'Blockchain', items: ['Solana', 'Aptos', 'Anchor'] },
+  { name: 'Languages', items: ['Rust', 'TypeScript', 'Python'] },
   { name: 'Backend & Infra', items: ['Node.js', 'PostgreSQL', 'Redis', 'RabbitMQ', 'Docker'] },
   { name: 'Frontend', items: ['Next.js', 'React', 'TradingView', 'Solana Wallet Adapter'] },
+  { name: 'Blockchain', items: ['Solana', 'Aptos', 'Anchor'] },
   {
     name: 'Trading Systems',
     items: ['market-making bots', 'cross-exchange arbitrage', 'options vaults', 'perps flows', 'on-chain indexers'],

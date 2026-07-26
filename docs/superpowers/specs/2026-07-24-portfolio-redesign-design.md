@@ -425,10 +425,10 @@ Playwright 스위트 (Chromium + mobile WebKit):
 | landing.resumeCta | Download resume (PDF) | 이력서 다운로드 (PDF) |
 
 스킬 별자리 (두 locale 공통):
-- Languages: Rust · Python · TypeScript
-- Blockchain: Solana · Aptos · Anchor
+- Languages: Rust · TypeScript · Python
 - Backend & Infra: Node.js · PostgreSQL · Redis · RabbitMQ · Docker
 - Frontend: Next.js · React · TradingView · Solana Wallet Adapter
+- Blockchain: Solana · Aptos · Anchor
 - Trading Systems: market-making bots · cross-exchange arbitrage · options vaults · perps flows · on-chain indexers
 
 연락처 링크 (정확한 href — Playwright 검증 대상):
