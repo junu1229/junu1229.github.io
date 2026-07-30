@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { en, type Dictionary, type Locale } from './en'
 import { ko } from './ko'
 
@@ -17,13 +17,17 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.lang = next
   }, [])
 
-  const setLocale = (l: Locale) => {
+  const setLocale = useCallback((l: Locale) => {
     setLocaleState(l)
     localStorage.setItem('locale', l)
     document.documentElement.lang = l
-  }
+  }, [])
 
-  return <LanguageContext.Provider value={{ locale, setLocale }}>{children}</LanguageContext.Provider>
+  // locale이 그대로면 같은 객체를 넘긴다. 매 렌더 새 객체를 넘기면 useT()를 쓰는 장면 전체가
+  // 불필요하게 리렌더되고, useSceneTimeline이 locale을 의존성으로 잡고 있어 타임라인 재생성까지 번진다.
+  const value = useMemo(() => ({ locale, setLocale }), [locale, setLocale])
+
+  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
 }
 
 export function useLocale() {

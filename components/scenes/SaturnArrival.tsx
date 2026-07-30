@@ -50,9 +50,7 @@ export function SaturnArrival() {
           <ol className="sat-flow">
             {t.saturn.diagram.map((step, i) => (
               <li key={step} className="sat-flow-step">
-                <span className="sat-flow-num" style={{ background: 'var(--saturn-gold)', color: 'var(--on-accent)' }}>
-                  {i + 1}
-                </span>
+                <span className="sat-flow-num">{i + 1}</span>
                 {step}
                 {i < t.saturn.diagram.length - 1 && (
                   <svg viewBox="0 0 10 24" className="sat-flow-connector" aria-hidden="true">

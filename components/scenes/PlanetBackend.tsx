@@ -46,13 +46,19 @@ export function PlanetBackend() {
         }, 0.05)
         .to('.be-beat-1', { opacity: 0, ease: 'none', duration: 0.06 }, 0.30)
       // Beat 2 (33–66%): 봇 + P&L 게이지 (transform만)
+      // stagger 꼬리는 반드시 해당 beat의 페이드아웃 시작(0.63) 전에 끝나야 한다.
+      // quote 10개: 0.44 + 0.01×9 + 0.09 = 0.62, needle: 0.50 + 0.12 = 0.62.
       tl.from('.be-beat-2', { opacity: 0, ease: 'none', duration: 0.06 }, 0.36)
-        .from('.be-quote', { scaleY: 0, transformOrigin: 'bottom', stagger: 0.02, ease: 'none', duration: 0.12 }, 0.44)
-        .fromTo('.be-pnl-needle', { rotate: -60, transformOrigin: '50% 100%' }, { rotate: 45, transformOrigin: '50% 100%', ease: 'none', duration: 0.15 }, 0.50)
+        .from('.be-quote', { scaleY: 0, transformOrigin: 'bottom', stagger: 0.01, ease: 'none', duration: 0.09 }, 0.44)
+        .fromTo('.be-pnl-needle', { rotate: -60, transformOrigin: '50% 100%' }, { rotate: 45, transformOrigin: '50% 100%', ease: 'none', duration: 0.12 }, 0.50)
         .to('.be-beat-2', { opacity: 0, ease: 'none', duration: 0.06 }, 0.63)
       // Beat 3 (66–100%): 스케일 — 지갑 낙하
+      // 지갑 24개: 0.75 + 0.005×23 + 0.1 = 0.965 — 타임라인 끝(1) 안쪽에서 완료된다.
       tl.from('.be-beat-3', { opacity: 0, ease: 'none', duration: 0.06 }, 0.69)
-        .from('.be-wallet', { y: -40, opacity: 0, stagger: 0.008, ease: 'none', duration: 0.1 }, 0.75)
+        .from('.be-wallet', { y: -40, opacity: 0, stagger: 0.005, ease: 'none', duration: 0.1 }, 0.75)
+      // 타임라인 길이를 1로 고정한다. 이게 없으면 총 길이가 마지막 트윈의 종료 시점에 따라
+      // 달라져서 위 위치값들이 더 이상 퍼센트로 읽히지 않는다.
+      tl.set({}, {}, 1)
     },
     { scope: ref, dependencies: [mode, locale], revertOnUpdate: true },
   )
